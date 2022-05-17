@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoursesManagementService", "CoursesManagementService\CoursesManagementService.csproj", "{9046834E-854B-4601-BEB0-0F1CDF459B94}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDb", "MongoDb\MongoDb.csproj", "{E2198105-D975-4881-961C-1AB1FA39D745}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9046834E-854B-4601-BEB0-0F1CDF459B94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9046834E-854B-4601-BEB0-0F1CDF459B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9046834E-854B-4601-BEB0-0F1CDF459B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9046834E-854B-4601-BEB0-0F1CDF459B94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2198105-D975-4881-961C-1AB1FA39D745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2198105-D975-4881-961C-1AB1FA39D745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2198105-D975-4881-961C-1AB1FA39D745}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2198105-D975-4881-961C-1AB1FA39D745}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72188073-90F8-4039-BCBE-EC879231215D}
+	EndGlobalSection
+EndGlobal
