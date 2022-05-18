@@ -1,4 +1,4 @@
-![Alt Text](https://github.com/alexandraprisecaru/coursesplatform/blob/master/current_status.gif)
+![Alt Text](https://github.com/alexandraprisecaru/coursesplatform/blob/master/current_status2.gif)
 
 Current functionality:
 * User can see a list of courses (name + duration in hours) 
