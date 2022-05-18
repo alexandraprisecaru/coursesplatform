@@ -1,3 +1,5 @@
+![Alt Text](https://github.com/alexandraprisecaru/coursesplatform/blob/master/current_status.gif)
+
 Current functionality:
 * User can see a list of courses (name + duration in hours) 
 * User can select one or more courses, the total number of hours is displayed on the page
