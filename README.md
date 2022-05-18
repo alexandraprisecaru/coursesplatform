@@ -6,7 +6,7 @@ Current functionality:
 * User can select a date range in wish he wants to take the courses, specifying the start and end date
 * When at least one course is selected and a date range is specified, user can calculate the estimated hours/per week he should dedicate to studying by clicking the calculate button
 * The service is called which adds the data to db, checks the courses ids are correct and generates the weekly estimate
-* A dialog is displayed in which all information about the current selection are displayed, including total hours and estimated hours per week
+* A dialog is displayed in which all information about the current selection is displayed, including total hours and estimated hours per week
 * User can see all calculation usage from the past by going to the /estimations route. Action can be done via UI buttons as well
 
 
@@ -19,6 +19,7 @@ Future implementation:
 * Add unit tests & integration tests
 * Style UI better, currently it's very simple
 * Dockerize backend
+* Improve error handling
 
 
 Assumptions made:
