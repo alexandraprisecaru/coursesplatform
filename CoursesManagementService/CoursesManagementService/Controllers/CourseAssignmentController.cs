@@ -18,8 +18,7 @@ namespace CoursesManagementService.Controllers
         [HttpPost]
         public async Task<IActionResult> AssignCoursesToUser([FromBody] UserAssignment userAssignments)
         {
-            await _userAssignmentProcessor.AssignCoursesAsync(userAssignments);
-            return Ok();
+            return Ok(await _userAssignmentProcessor.AssignCoursesAsync(userAssignments));
         }
 
         [HttpGet]

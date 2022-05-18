@@ -17,5 +17,7 @@ namespace CoursesManagementService.Models
         public DateTime EndDate { get; set; }
 
         public int WeeklyEstimate { get; set; }
+
+        public int TotalHours { get; set; }
     }
 }

@@ -16,7 +16,7 @@ builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection(nam
 
 builder.Services.TryAddSingleton<IMongoConnection, MongoConnection>();
 builder.Services.TryAddSingleton<IRepository<CourseDomain>, Repository<CourseDomain>>();
-builder.Services.TryAddSingleton<IRepository<UserAssignment>, Repository<UserAssignment>>();
+builder.Services.TryAddSingleton<IRepository<UserAssignmentDomain>, Repository<UserAssignmentDomain>>();
 
 builder.Services.TryAddScoped<ICourseProcessor, CourseProcessor>();
 builder.Services.TryAddScoped<ICourseAssignmentsProcessor, CourseAssignmentsProcessor>();

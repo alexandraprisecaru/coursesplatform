@@ -4,7 +4,7 @@ namespace CoursesManagementService.Processors.Interfaces
 {
     public interface ICourseAssignmentsProcessor
     {
-        Task AssignCoursesAsync(UserAssignment userAssignment);
+        Task<UserAssignment> AssignCoursesAsync(UserAssignment userAssignment);
         Task<List<UserAssignment>> GetUserAssignmentsAsync(string userId);
     }
 }
