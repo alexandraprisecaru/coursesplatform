@@ -1,3 +1,4 @@
+using CoursesManagementService.HostedServices;
 using CoursesManagementService.Models;
 using CoursesManagementService.Models.Domain;
 using CoursesManagementService.Processors;
@@ -16,8 +17,11 @@ builder.Services.TryAddSingleton<IMongoConnection, MongoConnection>();
 builder.Services.TryAddSingleton<IRepository<CourseDomain>, Repository<CourseDomain>>();
 builder.Services.TryAddSingleton<IRepository<UserAssignmentDomain>, Repository<UserAssignmentDomain>>();
 
-builder.Services.TryAddScoped<ICourseProcessor, CourseProcessor>();
-builder.Services.TryAddScoped<ICourseAssignmentsProcessor, CourseAssignmentsProcessor>();
+builder.Services.TryAddSingleton<ICourseProcessor, CourseProcessor>();
+builder.Services.TryAddSingleton<ICourseAssignmentsProcessor, CourseAssignmentsProcessor>();
+
+// initialize courses if db is empty -> just for testing purposes
+builder.Services.AddHostedService<DbCoursesInitializerService>();
 
 // add more Api configuration
 builder.Services.AddAutoMapper(typeof(MapperProfile).Assembly);
@@ -46,4 +50,8 @@ app.UseSwaggerUI(options =>
     options.RoutePrefix = string.Empty;
 });
 
+
+
 app.Run();
+
+

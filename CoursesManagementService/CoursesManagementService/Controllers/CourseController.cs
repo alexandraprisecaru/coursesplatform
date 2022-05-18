@@ -27,7 +27,7 @@ namespace CoursesManagementService.Controllers
         /// Get all courses available
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
+        [HttpGet("all")]
         public async Task<IActionResult> GetCourses()
         {
             return Ok(await _courseProcessor.GetCoursesAsync());
@@ -37,7 +37,7 @@ namespace CoursesManagementService.Controllers
         /// Get courses by ids
         /// </summary>
         /// <param name="ids">ids of the courses</param>
-        [HttpGet]
+        [HttpPost("byIds")]
         public async Task<IActionResult> GetCoursesByIds([FromBody] List<string> ids)
         {
             return Ok(await _courseProcessor.GetCoursesByIdsAsync(ids));
