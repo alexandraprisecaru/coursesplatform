@@ -1,27 +1,25 @@
 ﻿using System.Text.RegularExpressions;
 using MongoDB.Driver;
-using MongoDb.Models;
 using MongoDb.Repository.Interfaces;
 
 namespace MongoDb.Repository
 {
+    /// <inheritdoc />
     public class Repository<T> : IRepository<T>
     {
-        private readonly IMongoConnection _connection;
-        private readonly MongoDbSettings _mongoDbSettings;
-        private readonly string _collectionName;
-
+        /// <inheritdoc />
         public IMongoCollection<T> Collection { get; }
         public virtual FilterDefinitionBuilder<T> Filter => Builders<T>.Filter;
-        public virtual SortDefinitionBuilder<T> Sort => Builders<T>.Sort;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="mongoConnection"></param>
         public Repository(IMongoConnection mongoConnection)
         {
-            _collectionName = Regex.Replace(typeof(T).Name, "domain", "", RegexOptions.IgnoreCase);
-            _connection = mongoConnection;
-            _mongoDbSettings = mongoConnection.MongoDbSettings;
-
-            Collection = mongoConnection.Database.GetCollection<T>(_collectionName);
+            string collectionName = Regex.Replace(typeof(T).Name, "domain", "", RegexOptions.IgnoreCase);
+            
+            Collection = mongoConnection.Database.GetCollection<T>(collectionName);
         }
     }
 }

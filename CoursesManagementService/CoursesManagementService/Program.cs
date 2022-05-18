@@ -1,6 +1,5 @@
 using CoursesManagementService.Models;
 using CoursesManagementService.Models.Domain;
-using CoursesManagementService.Models.Views;
 using CoursesManagementService.Processors;
 using CoursesManagementService.Processors.Interfaces;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -11,7 +10,6 @@ using MongoDb.Repository.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection(nameof(MongoDbSettings)));
 
 builder.Services.TryAddSingleton<IMongoConnection, MongoConnection>();
@@ -21,6 +19,7 @@ builder.Services.TryAddSingleton<IRepository<UserAssignmentDomain>, Repository<U
 builder.Services.TryAddScoped<ICourseProcessor, CourseProcessor>();
 builder.Services.TryAddScoped<ICourseAssignmentsProcessor, CourseAssignmentsProcessor>();
 
+// add more Api configuration
 builder.Services.AddAutoMapper(typeof(MapperProfile).Assembly);
 
 builder.Services.AddControllers(options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true).AddNewtonsoftJson();
@@ -29,6 +28,8 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+
+// set app middlewares
 app.UseCors(options =>
 {
     options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
