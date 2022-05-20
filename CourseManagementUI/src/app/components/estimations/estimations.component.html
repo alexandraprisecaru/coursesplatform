@@ -1,0 +1,48 @@
+<mat-card>
+    <div>Estimations</div>
+    <div class="example-table-container">
+        <table mat-table [dataSource]="userCourses" matSort class="example-table">
+
+            <!-- No. of courses Column -->
+            <ng-container matColumnDef="courses">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by nr of courses"> No. of
+                    courses </th>
+                <td mat-cell *matCellDef="let element"> {{element.courseIds.length}} </td>
+            </ng-container>
+
+            <!-- Start Date Column -->
+            <ng-container matColumnDef="startDate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by starting date">
+                    Start Date
+                </th>
+                <td mat-cell *matCellDef="let element"> {{element.startDate | date:'shortDate' }} </td>
+            </ng-container>
+
+            <!-- EndDate Column -->
+            <ng-container matColumnDef="endDate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by ending date"> End Date
+                </th>
+                <td mat-cell *matCellDef="let element"> {{element.endDate | date:'shortDate' }} </td>
+            </ng-container>
+
+            <!-- Total hours Column -->
+            <ng-container matColumnDef="totalHours">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by total hours"> Total
+                    hours
+                </th>
+                <td mat-cell *matCellDef="let element"> {{element.totalHours}}h </td>
+            </ng-container>
+
+            <!-- Weekly estimate Column -->
+            <ng-container matColumnDef="weeklyEstimate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weekly estimated hours"> Weekly
+                    estimate
+                </th>
+                <td mat-cell *matCellDef="let element"> {{element.weeklyEstimate}}h </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openDialog(row)" >
+            </tr>
+        </table>
+    </div>
+</mat-card>
